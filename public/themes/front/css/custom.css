@@ -1,0 +1,43 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    margin-top: 0px;
+}
+
+.social-icon>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-icon>ul>li {
+    display: inline-block;
+}
+
+.social-icon>ul>li>a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #0d1128;
+    color: #fff;
+    border-radius: 50%;
+    margin: 11px 2px;
+}
+
+.header-text h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 49px;
+    font-weight: bold;
+}
+
+.header-text h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-style: italic;
+}
