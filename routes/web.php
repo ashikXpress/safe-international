@@ -26,6 +26,9 @@ Route::get('/news/{id}', 'HomeController@newsDetails')->name('news_details');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::post('/contact', 'HomeController@contactPost')->name('contact_post');
 
+Route::get('house-holding-machines-big-corporate-plant','Homecontroller@allMachine')->name('machine.show');
+Route::get('house-holding-machines-big-corporate-plant-machine-details/{id}','Homecontroller@machineDetails')->name('machine.details');
+
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
@@ -40,12 +43,12 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function (
     Route::post('/submenu_content_details/save/{submenu}', 'PageContentController@subMenuContentSave')->name('submenu_content_save');
 
     // Project
-    /*Route::get('/project', 'ProjectController@index')->name('admin_all_project');
+    Route::get('/project', 'ProjectController@index')->name('admin_all_project');
     Route::get('/project/add', 'ProjectController@add')->name('add_project');
     Route::post('/project/add', 'ProjectController@addPost')->name('add_project_post');
     Route::get('/project/edit/{project}', 'ProjectController@edit')->name('edit_project');
     Route::post('/project/edit/{project}', 'ProjectController@editPost')->name('edit_project_post');
-    Route::post('/project/delete', 'ProjectController@delete')->name('delete_project');*/
+    Route::post('/project/delete', 'ProjectController@delete')->name('delete_project');
 
     // News
     Route::get('/news', 'NewsController@index')->name('admin_all_news');
@@ -96,6 +99,16 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function (
     Route::post('update/client/{client}','ClientController@updateClient')->name('update.client');
     Route::post('client/delete','ClientController@deleteClient')->name('delete.client');
     Route::get('all/client','ClientController@allClient')->name('all.client');
+
+
+
+    //MMachine
+    Route::get('add/machine','MachineController@addMachineForm')->name('add.machine.form');
+    Route::post('add/machine','MachineController@addMachine')->name('add.machine');
+    Route::get('edit/machine/{machine}','MachineController@editMachine')->name('edit.machine');
+    Route::post('update/machine/{machine}','MachineController@updateMachine')->name('update.machine');
+    Route::post('machine/delete','MachineController@deleteMachine')->name('delete.machine');
+    Route::get('all/machine','MachineController@allMachine')->name('all.machine');
 
 });
 

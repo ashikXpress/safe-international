@@ -33,7 +33,6 @@ class ProjectController extends Controller
         $file->move($destinationPath, $filename);
 
         $project = new Project();
-        $project->type = $request->type;
         $project->title = $request->title;
         $project->image = $filename;
         $project->description = $request->description;
@@ -54,8 +53,7 @@ class ProjectController extends Controller
         ]);
 
         if ($request->image) {
-            //unlink('uploads/project/'.$project->image);
-
+            unlink('uploads/project/'.$project->image);
             $file = $request->file('image');
             $filename = Uuid::uuid1()->toString().'.'.$file->getClientOriginalExtension();
             $destinationPath = 'public/uploads/project';
@@ -64,7 +62,6 @@ class ProjectController extends Controller
             $project->image = $filename;
         }
 
-        $project->type = $request->type;
         $project->title = $request->title;
         $project->description = $request->description;
         $project->save();

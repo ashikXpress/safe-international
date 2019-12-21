@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74b7d3a4-30b7-42a9-84df-463d0c420103" name="Default Changelist" comment="" />
+    <list default="true" id="74b7d3a4-30b7-42a9-84df-463d0c420103" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MachineController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Machine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_21_061205_create_machines_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/plugins/zoom/jquery-1.6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/plugins/zoom/jquery.jqzoom-core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/plugins/zoom/jquery.jqzoom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/plugins/zoom/zoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/machine/a5680d3a-23cd-11ea-b320-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/machine/a571549e-23cd-11ea-a1c2-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/machine/a5718680-23cd-11ea-848d-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/machine/dd67e0c8-23c0-11ea-8e9f-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/machine/dd6f42dc-23c0-11ea-9e57-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/machine/dd6f7612-23c0-11ea-bb8d-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/project/daf30726-23ae-11ea-8a87-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/project/e27e48d4-23ae-11ea-adf9-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/project/f46bd208-23ab-11ea-8121-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/project/fb478ef2-23ae-11ea-87f0-2047474f7ba0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/machine/add_machine.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/machine/all_machine.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/machine/edit_machine.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/all_machine.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/machine_details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_02_094351_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_02_094351_create_projects_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/themes/front/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/themes/front/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/project/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/project/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/project/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/project/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/project/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/project/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +48,16 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\xampp\htdocs\safe_international\.idea" />
+      </set>
+    </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -109,22 +155,27 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1U9H2Hl3bT8UYUNBhtyzxt7YEBR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\safe_international\resources\views" />
+      <recent name="C:\xampp\htdocs\safe_international\resources\views\admin\machine" />
+      <recent name="C:\xampp\htdocs\safe_international\resources\views\admin" />
       <recent name="C:\xampp\htdocs\safe_international\app\Model" />
       <recent name="C:\xampp\htdocs\safe_international\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\safe_international\database\migrations" />
-      <recent name="C:\xampp\htdocs\safe_international\resources\views\admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -168,22 +219,30 @@
       <workItem from="1575967790122" duration="5392000" />
       <workItem from="1576664578953" duration="3187000" />
       <workItem from="1576738998639" duration="6777000" />
-      <workItem from="1576750523278" duration="6830000" />
+      <workItem from="1576750523278" duration="7452000" />
+      <workItem from="1576900019330" duration="21938000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1576751115741">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576909963375">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576751115741" />
-    <state x="517" y="283" key="NewPhpFileDialog" timestamp="1576750952102">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576909963375" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1576907744164">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="283" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1576750952102" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576907744164" />
+    <state x="517" y="283" key="NewPhpFileDialog" timestamp="1576917920075">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="283" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1576917920075" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

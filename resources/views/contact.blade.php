@@ -108,9 +108,7 @@
 @endsection
 
 @section('additionalJS')
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnKKbnZogxI9jte1w5VhVfg0CyyZyJTzw&callback=initMap">
-    </script>
+
     <script>
         // Initialize and add the map
         function initMap() {
@@ -121,6 +119,11 @@
                 document.getElementById('map'), {zoom: 19, center: uluru});
             // The marker, positioned at Uluru
             var marker = new google.maps.Marker({position: uluru, map: map});
+            var map = new google.maps.Map(
+                document.getElementById('map_footer'), {zoom: 14, center: uluru});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
+
         }
     </script>
 @endsection

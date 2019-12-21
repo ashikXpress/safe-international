@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ContactMail;
 use App\Model\Client;
 use App\Model\GalleryItem;
+use App\Model\Machine;
 use App\Model\Member;
 use App\Model\Menu;
 use App\Model\News;
@@ -19,7 +20,7 @@ class HomeController extends Controller
 {
     public function index() {
         $sliders = Slider::orderBy('sort')->get();
-        $projects = Project::latest()->take(8)->get();
+        $projects = Project::latest()->take(3)->get();
         $newses = News::latest()->take(3)->get();
         $members=Member::latest()->take(3)->get();
 
@@ -106,4 +107,18 @@ class HomeController extends Controller
 
         return redirect()->back()->with('message', 'Message sent successfully.');
     }
+
+    public function allMachine(){
+        $data['machines']=Machine::paginate(8);
+
+        return view('all_machine',$data);
+    }
+public function machineDetails($id){
+        $data['machine']=Machine::findOrFail($id);
+        return view('machine_details',$data);
+}
+
+
+
+
 }

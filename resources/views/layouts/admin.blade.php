@@ -193,6 +193,27 @@
                         </li>
                     </ul>
                 </li>
+                <?php
+                $subMenu = ['add_project', 'admin_all_project', 'edit_project'];
+                ?>
+
+                <li class="treeview {{ in_array(Route::currentRouteName(), $subMenu) ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-circle-o text-red"></i> <span>Project</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu {{ in_array(Route::currentRouteName(), $subMenu) ? 'active menu-open' : '' }}">
+                        <li class="{{ Route::currentRouteName() == 'add_project' ? 'active' : '' }}">
+                            <a href="{{ route('add_project') }}"><i class="fa fa-circle-o"></i> Add Project</a>
+                        </li>
+
+                        <li class="{{ Route::currentRouteName() == 'admin_all_project' ? 'active' : '' }}">
+                            <a href="{{ route('admin_all_project') }}"><i class="fa fa-circle-o"></i> All Projects</a>
+                        </li>
+                    </ul>
+                </li>
 
                 <?php
                     $subMenu = ['add_gallery_item', 'admin_all_gallery_item', 'edit_gallery_item'];
@@ -215,23 +236,25 @@
                         </li>
                     </ul>
                 </li>
+
+
                 <?php
-                $subMenu = ['add.team.member.form','all.team.member','team.member.edit'];
+                $subMenu = ['add.machine.form','all.machine','machine.client'];
                 ?>
 
                 <li class="treeview {{ in_array(Route::currentRouteName(), $subMenu) ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-circle-o text-red"></i> <span>Team Member</span>
+                        <i class="fa fa-circle-o text-red"></i> <span>Machine</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                     <ul class="treeview-menu {{ in_array(Route::currentRouteName(), $subMenu) ? 'active menu-open' : '' }}">
-                        <li class="{{ Route::currentRouteName() == 'add.team.member.form' ? 'active' : '' }}">
-                            <a href="{{ route('add.team.member.form') }}"><i class="fa fa-circle-o"></i> Add Team Member</a>
+                        <li class="{{ Route::currentRouteName() == 'add.machine.form' ? 'active' : '' }}">
+                            <a href="{{ route('add.machine.form') }}"><i class="fa fa-circle-o"></i> Add Machine</a>
                         </li>
-                        <li class="{{ Route::currentRouteName() == 'all.team.member' ? 'active' : '' }}">
-                            <a href="{{ route('all.team.member') }}"><i class="fa fa-circle-o"></i> All Team Member</a>
+                        <li class="{{ Route::currentRouteName() == 'all.machine' ? 'active' : '' }}">
+                            <a href="{{ route('all.machine') }}"><i class="fa fa-circle-o"></i> All Machine</a>
                         </li>
 
                     </ul>

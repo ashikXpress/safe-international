@@ -48,11 +48,11 @@
             <div class="col-sm-4 d-block">
                 <div class="social-icon text-right">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-youtube"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="#"><i class="icon-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -98,12 +98,17 @@
         <div class="row mb-5">
             <div class="col-md-6 col-lg-3">
                 <div class="ftco-footer-widget mb-5">
-                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <h2 class="ftco-heading-2">Location</h2>
+                    <div class="block-23 mb-3" id="map_footer"></div>
+                    <br>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="tel:+2 392 3929 210"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="mailto:info@yourdomain.com"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                            <li><span class="icon icon-map-marker"></span><span class="text">Road# 1, House# 17, Senpara parbota (Ground floor, 1st floor & 3rd floor), Mirpur-10, Dhaka-1216, Bangladesh</span></li>
+                            <li>
+                                <a href="tel:+2 392 3929 210">
+                                    <span class="icon icon-phone"></span>
+                                    <span class="text">+880-1976-605555, <br> +88-02-9030394</span></a></li>
+                            <li><a href="mailto:info@yoursite.com"><span class="icon icon-envelope"></span><span class="text">info@yoursite.com</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -140,8 +145,11 @@
                 <div class="ftco-footer-widget mb-5">
                     <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                        <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-youtube"></span></a></li>
+                        <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-linkedin"></span></a></li>
+                        <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-envelope"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -179,7 +187,9 @@
 <script src="{{ asset('themes/front/js/scrollax.min.js') }}"></script>
 <script src="{{ asset('themes/front/js/main.js') }}"></script>
 <script src="{{ asset('plugins/typejs/typed.min.js') }}"></script>
-
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnKKbnZogxI9jte1w5VhVfg0CyyZyJTzw&callback=initMap">
+</script>
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -211,7 +221,16 @@
 
     });
 
+    function initMap() {
+        // The location of Uluru
+        var uluru = {lat: 23.772520, lng: 90.4056818};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map_footer'), {zoom: 14, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
 
+    }
 
 </script>
 @yield('additionalJS')

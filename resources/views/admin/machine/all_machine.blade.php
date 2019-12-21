@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    All Projects
+    All Machine
 @stop
 
 @section('content')
@@ -18,21 +18,33 @@
                 <div class="box-body table-responsive">
                     <table class="table table-bordered">
                         <tr>
-                            <th>Image</th>
-                            <th>Title</th>
+                            <th>Image1</th>
+                            <th>Image2</th>
+                            <th>Image3</th>
+                            <th>Type</th>
+                            <th>Model</th>
+                            <th>Capacity</th>
                             <th>Action</th>
                         </tr>
 
-                        @foreach($projects as $project)
+                        @foreach($machines as $machine)
                             <tr>
                                 <td>
-                                    <img src="{{ asset('uploads/project/'.$project->image) }}" height="50px">
+                                    <img src="{{ asset('uploads/machine/'.$machine->image1) }}" height="50px">
                                 </td>
-
-                                <td width="60%">{{ $project->title }}</td>
                                 <td>
-                                    <a href="{{ route('edit_project', ['project' => $project->id]) }}">Edit</a> |
-                                    <a role="button" class="text-red btnDelete" data-id="{{ $project->id }}">Delete</a>
+                                    <img src="{{ asset('uploads/machine/'.$machine->image2) }}" height="50px">
+                                </td>
+                                <td>
+                                    <img src="{{ asset('uploads/machine/'.$machine->image3) }}" height="50px">
+                                </td>
+                                <td>{{ $machine->type }}</td>
+                                <td>{{ $machine->model }}</td>
+                                <td>{{ $machine->capacity }}</td>
+                                <td>
+                                    <a href="{{ route('edit.machine',$machine->id)}}">Edit</a> |
+                                    <a role="button" class="text-red btnDelete" data-id="{{ $machine->id }}">Delete</a>
+
                                 </td>
                             </tr>
                         @endforeach
@@ -40,7 +52,7 @@
                 </div>
 
                 <div class="box-footer clearfix">
-                    {{ $projects->links() }}
+                    {{ $machines->links() }}
                 </div>
             </div>
         </div>
@@ -82,7 +94,7 @@
             $('#modalBtnDelete').click(function () {
                 $.ajax({
                     method: "POST",
-                    url: "{{ route('delete_project') }}",
+                    url: "{{ route('delete.machine') }}",
                     data: { id: selectedId }
                 }).done(function( msg ) {
                     location.reload();
@@ -91,3 +103,4 @@
         });
     </script>
 @stop
+

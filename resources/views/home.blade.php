@@ -81,55 +81,28 @@
 
     <section class="ftco-section">
         <div class="container">
-            <div class="row d-flex">
-                <div class="col-md-5 order-md-last wrap-about align-items-stretch">
-                    <div class="wrap-about-border ftco-animate">
-                        <div class="img" style="background-image: url('{{ asset('img/about.jpg') }}'); border"></div>
-                        <div class="text">
-                            <h3>Read Our Success Story for Inspiration</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
-                        </div>
-                    </div>
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <h2 class="mb-4">Our Project</h2>
                 </div>
-                <div class="col-md-7 wrap-about pr-md-4 ftco-animate">
-                    <h2 class="mb-4">Introduction</h2>
-                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
-                    <div class="row mt-5">
-                        <div class="col-lg-6">
-                            <div class="services active text-center">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-collaboration"></span></div>
-                                <div class="text media-body">
-                                    <h3>Organization</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-                                </div>
-                            </div>
-                            <div class="services text-center">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-analysis"></span></div>
-                                <div class="text media-body">
-                                    <h3>Risk Analysis</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="services text-center">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-search-engine"></span></div>
-                                <div class="text media-body">
-                                    <h3>Marketing Strategy</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-                                </div>
-                            </div>
-                            <div class="services text-center">
-                                <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-handshake"></span></div>
-                                <div class="text media-body">
-                                    <h3>Capital Market</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+
+            </div>
+            <div class="row">
+                @foreach($projects as $project)
+                    <div class="col-sm-4">
+                        <div class="project-carousel">
+                            <div class="item-project">
+                                <div class="item-img"><img src="{{asset('uploads/project/'.$project->image)}}" alt=""></div>
+                                <div class="item-project-text">
+                                    <h2>{{$project->title}}</h2>
+                                    <p>{!! $project->description !!}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </section>
@@ -196,19 +169,21 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4"><span>Team</span> Member</h2>
+                    <h2 class="mb-4"><span>Meet Our Team</span> Member</h2>
                 </div>
             </div>
             <div class="row">
                 @foreach($members as $member)
-                    <div class="col-md-6 col-lg-4 ftco-animate">
-                        <div class="blog-entry">
-                            <a href="#" class="block-20 d-flex align-items-end" style="background-image: url('{{ asset('uploads/team/'.$member->image) }}');">
-
-                            </a>
-                            <div class="text bg-white p-4">
-                                <h3 class="heading"></h3>
-
+                    <div class="col-sm-4  ftco-animate">
+                        <div class="member-content">
+                            <div class="member-img">
+                                <img src="{{asset('uploads/team/'.$member->image)}}" alt="">
+                            </div>
+                            <div class="member-text">
+                                <h3>{{$member->name}}</h3>
+                                <h5>{{$member->designation}}</h5>
+                                <p>Mobile number: {{$member->mobile_number}}</p>
+                                <p>Email: {{$member->email}}</p>
                             </div>
                         </div>
                     </div>

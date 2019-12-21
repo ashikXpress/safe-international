@@ -17,17 +17,7 @@
                     @csrf
 
                     <div class="box-body">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Type</label>
 
-                            <div class="col-sm-4">
-                                <select class="form-control" name="type">
-                                    <option value="Complete" {{ old('type') == 'Complete' ? 'selected' : '' }}>Complete</option>
-                                    <option value="Ongoing" {{ old('type') == 'Ongoing' ? 'selected' : '' }}>Ongoing</option>
-                                    <option value="Upcoming" {{ old('type') == 'Upcoming' ? 'selected' : '' }}>Upcoming</option>
-                                </select>
-                            </div>
-                        </div>
 
                         <div class="form-group {{ $errors->has('title') ? 'has-error' :'' }}">
                             <label class="col-sm-2 control-label">Title</label>
