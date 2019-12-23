@@ -26,8 +26,10 @@ Route::get('/news/{id}', 'HomeController@newsDetails')->name('news_details');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::post('/contact', 'HomeController@contactPost')->name('contact_post');
 
-Route::get('house-holding-machines-big-corporate-plant','Homecontroller@allMachine')->name('machine.show');
-Route::get('house-holding-machines-big-corporate-plant-machine-details/{id}','Homecontroller@machineDetails')->name('machine.details');
+Route::get('house-holding-machines-big-corporate-plant','HomeController@allMachine')->name('machine.show');
+Route::get('house-holding-machines-big-corporate-plant-machine-details/{id}','HomeController@machineDetails')->name('machine.details');
+
+Route::get('making-purifier-system-water-jar-bottle','HomeController@jarBottle')->name('jar.bottle');
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
@@ -59,12 +61,12 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function (
     Route::post('/news/delete', 'NewsController@delete')->name('delete_news');
 
     // Client Says
-    Route::get('/say', 'SayController@index')->name('admin_all_say');
-    Route::get('/say/add', 'SayController@add')->name('add_say');
-    Route::post('/say/add', 'SayController@addPost')->name('add_say_post');
-    Route::get('/say/edit/{say}', 'SayController@edit')->name('edit_say');
-    Route::post('/say/edit/{say}', 'SayController@editPost')->name('edit_say_post');
-    Route::post('/say/delete', 'SayController@delete')->name('delete_say');
+//    Route::get('/say', 'SayController@index')->name('admin_all_say');
+//    Route::get('/say/add', 'SayController@add')->name('add_say');
+//    Route::post('/say/add', 'SayController@addPost')->name('add_say_post');
+//    Route::get('/say/edit/{say}', 'SayController@edit')->name('edit_say');
+//    Route::post('/say/edit/{say}', 'SayController@editPost')->name('edit_say_post');
+//    Route::post('/say/delete', 'SayController@delete')->name('delete_say');
 
     // Slider
     Route::get('/slider', 'SliderController@index')->name('admin_all_slider');
@@ -102,13 +104,22 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function (
 
 
 
-    //MMachine
+    //Machine
     Route::get('add/machine','MachineController@addMachineForm')->name('add.machine.form');
     Route::post('add/machine','MachineController@addMachine')->name('add.machine');
     Route::get('edit/machine/{machine}','MachineController@editMachine')->name('edit.machine');
     Route::post('update/machine/{machine}','MachineController@updateMachine')->name('update.machine');
     Route::post('machine/delete','MachineController@deleteMachine')->name('delete.machine');
     Route::get('all/machine','MachineController@allMachine')->name('all.machine');
+
+
+    //Jar Bottle
+    Route::get('add/bottle','JarBottleController@addBottleForm')->name('add.bottle.form');
+    Route::post('add/bottle','JarBottleController@addBottle')->name('add.bottle');
+    Route::get('edit/bottle/{id}','JarBottleController@editBottle')->name('edit.bottle');
+    Route::post('update/bottle/{jarBottle}','JarBottleController@updateBottle')->name('update.bottle');
+    Route::post('bottle/delete','JarBottleController@deleteBottle')->name('delete.bottle');
+    Route::get('all/bottle','JarBottleController@allBottle')->name('all.bottle');
 
 });
 

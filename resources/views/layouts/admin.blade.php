@@ -150,27 +150,6 @@
                     </ul>
                 </li>
 
-                <?php
-                    $subMenu = ['add_say', 'admin_all_say', 'edit_say'];
-                ?>
-
-                <li class="treeview {{ in_array(Route::currentRouteName(), $subMenu) ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fa fa-circle-o text-red"></i> <span>Client Say</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu {{ in_array(Route::currentRouteName(), $subMenu) ? 'active menu-open' : '' }}">
-                        <li class="{{ Route::currentRouteName() == 'add_say' ? 'active' : '' }}">
-                            <a href="{{ route('add_say') }}"><i class="fa fa-circle-o"></i> Add Say</a>
-                        </li>
-
-                        <li class="{{ Route::currentRouteName() == 'admin_all_say' ? 'active' : '' }}">
-                            <a href="{{ route('admin_all_say') }}"><i class="fa fa-circle-o"></i> All Says</a>
-                        </li>
-                    </ul>
-                </li>
 
                 <?php
                     $subMenu = ['add_slider', 'admin_all_slider', 'edit_slider'];
@@ -239,7 +218,7 @@
 
 
                 <?php
-                $subMenu = ['add.machine.form','all.machine','machine.client'];
+                $subMenu = ['add.machine.form','all.machine','edit.machine'];
                 ?>
 
                 <li class="treeview {{ in_array(Route::currentRouteName(), $subMenu) ? 'active' : '' }}">
@@ -255,6 +234,29 @@
                         </li>
                         <li class="{{ Route::currentRouteName() == 'all.machine' ? 'active' : '' }}">
                             <a href="{{ route('all.machine') }}"><i class="fa fa-circle-o"></i> All Machine</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <?php
+                $subMenu = ['add.bottle.form','all.bottle','edit.bottle'];
+                ?>
+
+                <li class="treeview {{ in_array(Route::currentRouteName(), $subMenu) ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-circle-o text-red"></i> <span>Jar Bottle</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu {{ in_array(Route::currentRouteName(), $subMenu) ? 'active menu-open' : '' }}">
+                        <li class="{{ Route::currentRouteName() == 'add.bottle.form' ? 'active' : '' }}">
+                            <a href="{{ route('add.bottle.form') }}"><i class="fa fa-circle-o"></i> Add Jar Bottle</a>
+                        </li>
+                        <li class="{{ Route::currentRouteName() == 'all.bottle' ? 'active' : '' }}">
+                            <a href="{{ route('all.bottle') }}"><i class="fa fa-circle-o"></i> All Jar Bottle</a>
                         </li>
 
                     </ul>

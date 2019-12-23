@@ -231,3 +231,21 @@
 
 
 @endsection
+@section('additionalJS')
+    <script src="{{ asset('plugins/typejs/typed.min.js') }}"></script>
+    <script>
+        var typed = new Typed('.typejs', {
+            strings: [
+                'These are the default values...',
+                'You know what you should do?',
+                'Use your own!',
+                'Have a great day!'
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+            shuffle: true
+
+        });
+    </script>
+@endsection

@@ -27,7 +27,20 @@
     <link rel="stylesheet" href="{{ asset('themes/front/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/front/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    <style>
+        .clock {
+            background: #fff;
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
+        h1#clock {
+            font-size: 37px;
+            text-shadow: 0 2px 3px #000;
+        }
+    </style>
     @yield('additionalCSS')
 </head>
 <body>
@@ -71,7 +84,7 @@
                 @foreach($layoutData['menus'] as $menu)
                     @if ($menu->subMenus->count())
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ url('/') .'/'.  $menu->url }}" id="{{ $menu->id }}" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="{{ url('/') .'/'.  $menu->url }}" id="{{ $menu->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ $menu->name }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="{{ $menu->id }}">
@@ -151,6 +164,9 @@
                         <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-linkedin"></span></a></li>
                         <li class="ftco-animate"><a href="#" target="_blank"><span class="icon-envelope"></span></a></li>
                     </ul>
+                    <div class="clock">
+                        <h1 id="clock"></h1>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +184,7 @@
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 <div class="fb-customerchat"
-     page_id="313068775974658"
+     page_id="721112324743394"
      minimized="true">
 </div>
 
@@ -186,7 +202,7 @@
 <script src="{{ asset('themes/front/js/jquery.animateNumber.min.js') }}"></script>
 <script src="{{ asset('themes/front/js/scrollax.min.js') }}"></script>
 <script src="{{ asset('themes/front/js/main.js') }}"></script>
-<script src="{{ asset('plugins/typejs/typed.min.js') }}"></script>
+
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnKKbnZogxI9jte1w5VhVfg0CyyZyJTzw&callback=initMap">
 </script>
@@ -207,23 +223,11 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    var typed = new Typed('.typejs', {
-        strings: [
-            'These are the default values...',
-            'You know what you should do?',
-            'Use your own!',
-            'Have a great day!'
-        ],
-        typeSpeed: 60,
-        backSpeed: 40,
-        loop: true,
-        shuffle: true
 
-    });
 
     function initMap() {
         // The location of Uluru
-        var uluru = {lat: 23.772520, lng: 90.4056818};
+        var uluru = {lat: 23.7405546, lng: 90.3810843};
         // The map, centered at Uluru
         var map = new google.maps.Map(
             document.getElementById('map_footer'), {zoom: 14, center: uluru});
@@ -231,6 +235,15 @@
         var marker = new google.maps.Marker({position: uluru, map: map});
 
     }
+
+
+    setInterval(function(){
+        var currentdate = new Date();
+        $('#clock').html(currentdate.toLocaleTimeString('en-US', { hour12: true,
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric"}));
+    }, 1000);
 
 </script>
 @yield('additionalJS')

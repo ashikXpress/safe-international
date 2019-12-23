@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ContactMail;
 use App\Model\Client;
 use App\Model\GalleryItem;
+use App\Model\JarBottle;
 use App\Model\Machine;
 use App\Model\Member;
 use App\Model\Menu;
@@ -118,7 +119,11 @@ public function machineDetails($id){
         return view('machine_details',$data);
 }
 
+public function jarBottle(){
 
+        $data['bottles']=JarBottle::paginate(12);
+        return view('jar_bottle',$data);
+}
 
 
 }
